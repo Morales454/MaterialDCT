@@ -30,6 +30,7 @@
 
 <div class="content">
     <p>¡Este es mi primer sitio web! Estoy aprendiendo a programar y crear páginas.</p>
+    <p>¡Ojala puedas ver esto preciosa, te amo karime :*.</p>
 </div>
 
 </body>
