@@ -28,6 +28,14 @@
     <h1>Bienvenidos a mi página web</h1>
 </header>
 
+<script>
+    function saludar() {
+        alert("¡Hola! Gracias por visitar mi página.");
+    }
+</script>
+<button onclick="saludar()">Haz clic para saludar</button>
+
+
 <div class="content">
     <p>¡Este es mi primer sitio web! Estoy aprendiendo a programar y crear páginas.</p>
     <p>¡Ojala puedas ver esto preciosa, te amo karime :*.</p>
