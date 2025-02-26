@@ -1,5 +1,4 @@
 # MaterialDCT
-<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -14,7 +13,7 @@
         }
         header {
             background-color: #333;
-            color: red;
+            color: white;
             padding: 10px 0;
             text-align: center;
         }
