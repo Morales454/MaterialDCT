@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -78,6 +79,44 @@
         .material-list li {
             margin: 10px 0;
         }
+
+        /* Carrusel de imágenes */
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            margin: 20px 0;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            height: auto;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .prev {
+            left: 10px;
+            transform: translateY(-50%);
+        }
+
+        .next {
+            right: 10px;
+            transform: translateY(-50%);
+        }
     </style>
 </head>
 <body>
@@ -94,6 +133,17 @@
     </nav>
 
     <div class="container">
+        <!-- Carrusel de imágenes -->
+        <section class="carousel">
+            <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+            <div class="carousel-images">
+                <img src="https://via.placeholder.com/1200x400/ff7b7b/ffffff?text=Curso+Gratis+1" alt="Curso 1">
+                <img src="https://via.placeholder.com/1200x400/7bffb5/ffffff?text=Curso+Gratis+2" alt="Curso 2">
+                <img src="https://via.placeholder.com/1200x400/7b7bff/ffffff?text=Curso+Avanzado" alt="Curso Avanzado">
+            </div>
+            <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+        </section>
+
         <!-- Sección de material gratuito -->
         <section id="free-material">
             <h2>Material Gratuito</h2>
@@ -144,6 +194,20 @@
     <footer>
         <p>&copy; 2025 Material Educativo. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-images img');
+        const totalSlides = slides.length;
+
+        function moveSlide(step) {
+            currentSlide += step;
+            if (currentSlide < 0) currentSlide = totalSlides - 1;
+            if (currentSlide >= totalSlides) currentSlide = 0;
+            const offset = -currentSlide * 100;
+            document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
+        }
+    </script>
 
 </body>
 </html>
